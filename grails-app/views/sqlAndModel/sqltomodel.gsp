@@ -9,6 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+         <meta name="layout" content="devtoollayout">
         <title>Sql to model</title>
         <script src="../js/jquery-2.0.2.min.js" /></script>
     </head>
@@ -35,6 +36,8 @@
 										WHERE TABLE_NAME='USER_TABLE'
 	                                </h2>
                                 </div>
+                                
+                                
                                 <g:form name="myForm"  style="margin: 0 auto">
                                 <g:textArea name="sqlText" style="width:90%;height:300px;margin: 10px auto;display: block;" value="" /><br/>
 

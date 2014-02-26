@@ -9,9 +9,10 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="layout" content="devtoollayout">
         <title>Dev Tool</title>
-        <script src="js/jquery-2.0.2.min.js" /></script>
-        <script src="js/skrollr.min.js" /></script>
+        <script src="../js/jquery-2.0.2.min.js" /></script>
+        <script src="../js/skrollr.min.js" /></script>
         <script type="text/javascript">
               //Math.random();
               var mycat = new Array();
@@ -45,24 +46,19 @@
     <body>
         <div id="wrapper" style="margin: 0 auto;width: 1000px;">
         <div id="content" style="">
-            <header style="background-color: lightblue;border-radius: 5px">
-                ---- Dev Tool ---
-            </header>
-            <nav>
-              <a href="#">Main</a> |
-              <g:link controller="sqlAndModel" action="sqltomodel">SQL -> Model</g:link> |
-            </nav>
+            
+            
             <svg width="300" height="200">
 
             <polygon id="cat" points="100,10 40,180 190,60 10,60 160,180" style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
 
-            <!-- Right Pad -->
+            <!-- Right Pad --><%--
             <div  style="display: block;position: fixed;bottom: 50px;right: 0px;width: 50px;height: 100px ;background-color: gray ;border-bottom-left-radius: 5px ;border-top-left-radius: 5px">
                 <div style="position: relative">    
                     gdf
                 </div>
             </div>
-         </div>
+         --%></div>
     </div>
     <div id="skrollr-body" style="margin: 0 auto;width: 1000px;">
 		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="900px" height="800px">
