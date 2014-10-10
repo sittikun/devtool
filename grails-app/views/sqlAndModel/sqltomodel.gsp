@@ -48,6 +48,7 @@
                            		<g:submitToRemote url="[controller:'sqlAndModel',action:'doTrimAction']" update="resultdiv" value="Trim"></g:submitToRemote>
                             	<g:submitToRemote url="[controller:'sqlAndModel',action:'doThimInnerSpaceAction']" update="resultdiv" value="TrimIner"></g:submitToRemote>
                             	<g:submitToRemote url="[controller:'sqlAndModel',action:'doFieldToJavaTypeAction']" update="resultdiv" value="DB -&gt; JAVA"></g:submitToRemote><BR/> 
+                            	<g:submitToRemote url="[controller:'sqlAndModel',action:'doPrivateVarAction']" update="resultdiv" value="PrivateVar"></g:submitToRemote>
                             	<g:submitToRemote url="[controller:'sqlAndModel',action:'doDBGetterAction']" update="resultdiv" value="GETTER"></g:submitToRemote>
                             	<g:submitToRemote url="[controller:'sqlAndModel',action:'doDBSetterAction']" update="resultdiv" value="SETTER"></g:submitToRemote>
                             	

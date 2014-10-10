@@ -11,36 +11,59 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="layout" content="devtoollayout">
         <title>Dev Tool</title>
-        <script src="../js/jquery-2.0.2.min.js" /></script>
-        <script src="../js/skrollr.min.js" /></script>
+        <script src="${resource(dir: 'js', file: 'jquery-2.0.2.min.js')}" /></script>
+        <script src="${resource(dir: 'js', file: 'skrollr.min.js')}" /></script>
         <script type="text/javascript">
               //Math.random();
               var mycat = new Array();
+              var showcat = new Array();
+              var showcat2 = new Array();
               mycat[0] = 100;
               mycat[1] = 10;
               mycat[2] = 40;
               mycat[3] = 180;
               mycat[4] = 190;
-              mycat[5] = 160;
+              mycat[5] = 60;
               mycat[6] = 10;
               mycat[7] = 60;
               mycat[8] = 160;
               mycat[9] = 180;
+              //100,10 40,180 190,60 10,60 160,180
+              var j=0;
 
               setInterval(function(){
-
+					j++;
               for(var i=0;i<10;i++){
-              mycat[i] = Math.random()*200;
-                  //if(mycat[i] > 180){
+              //mycat[i] = Math.random()*200;
+
+					  if(i%2 == 0){
+		              		showcat[i]  = mycat[i]+j;
+		              		showcat2[i] = mycat[i];
+		              }else{
+		            	  	showcat[i]  = mycat[i];
+		            	  	showcat2[i] = mycat[i]+j;
+		              }
+
+					  
+
+              //if(mycat[i] > 180){
                   //    mycat[i] = 0;
                  // }
               }
+              if(j>1000){
+					j=0;
+				}
 
-              var str = mycat[0]+","+mycat[1]+" "+mycat[2]+","+mycat[3]+
-              " "+mycat[4]+","+mycat[5]+" "+mycat[6]+","+mycat[7]+" "+mycat[8]+","+mycat[9];
-                          $("#cat").attr("points",str)
+              var str = showcat[0]+","+showcat[1]+" "+showcat[2]+","+showcat[3]+
+              " "+showcat[4]+","+showcat[5]+" "+showcat[6]+","+showcat[7]+" "+showcat[8]+","+showcat[9];
+
+              var str2 = showcat2[0]+","+showcat2[1]+" "+showcat2[2]+","+showcat2[3]+
+              " "+showcat2[4]+","+showcat2[5]+" "+showcat2[6]+","+showcat2[7]+" "+showcat2[8]+","+showcat2[9];
+              //console.log("str"+str)
+              $("#cat").attr("points",str)
+              $("#cat2").attr("points",str2)
                           }
-                          ,100);
+                          ,10);
           </script>
     </head>
     <body>
@@ -48,9 +71,10 @@
         <div id="content" style="">
             
             
-            <svg width="300" height="200">
+            <svg width="100%" height="200">
 
             <polygon id="cat" points="100,10 40,180 190,60 10,60 160,180" style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+			<polygon id="cat2" points="100,10 40,180 190,60 10,60 160,180" style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
 
             <!-- Right Pad --><%--
             <div  style="display: block;position: fixed;bottom: 50px;right: 0px;width: 50px;height: 100px ;background-color: gray ;border-bottom-left-radius: 5px ;border-top-left-radius: 5px">

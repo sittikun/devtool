@@ -63,6 +63,10 @@ class SqlAndModelController {
 		render doDBSetter(dataIn)
 	}
 	
+	def doPrivateVarAction(){
+		String dataIn = params['sqlText'];
+		render doPrivateVar(dataIn)
+	}
 	//------------------------------------FUNCTION------------------------------------
     
     def doTrim(String dataIn){
@@ -89,6 +93,14 @@ class SqlAndModelController {
         
         dataout
     }
+	
+	def doPrivateVar(String dataIn){
+		StringBuilder dataout=new StringBuilder();
+		dataIn.eachLine{
+			dataout.append("private "+it+";\n");
+		}
+		dataout.toString()
+	}
     
     def doDBGetter(String dataIn){
         String dataout="";
